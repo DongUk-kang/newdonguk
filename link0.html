@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+
+  <!-- Webpage Title -->
+  <title>Hello, world!</title>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script>
+
+    
+
+  </script>
+
+  <style type="text/css">
+    * {
+      font-family: 'Noto Sans KR', sans-serif;
+
+
+
+    }
+
+    body {
+      background-color: black;
+    }
+
+    .wrap {
+
+      width: 500px;
+      margin: auto;
+    }
+
+    .img {
+      position: absolute;
+      top: 0%;
+      margin: auto;
+    }
+
+    #star_grade a {
+      text-decoration: none;
+      color: gray;
+    }
+
+    #star_grade a.on {
+      color: red;
+    }
+  </style>
+
+  <script>
+
+  function show_tatto(){
+      const queryString = window.location.search
+      console.log(queryString);
+      const urlParams = new URLSearchParams(queryString);
+      const body = urlParams.get('body')
+      console.log(body);
+  
+
+      $.ajax({
+        type: "GET",
+        url: "/detail/info?body=" + body,
+        async: true,
+        data: {},
+        success: function (data) {
+          var level = data["level"];
+          var title = data["title"];
+          var body = data["body"];
+          var image = data["image"];
+          var temp_html = ""
+          var star_html = ""
+          var image_html = ""
+
+          // temp_html += "<tr>";
+          temp_html += "<h1>" + title + "</h1>";
+          temp_html += "<h2>" + body + "</h2>";
+          console.log(temp_html)
+
+          star_html += "<p>"+level+"</p>"
+          image_html += `<img style='width:500px' src='/static/${image}' alt='tattto'/>`   
+
+          $('#alltattoo').append(temp_html);
+          $('#star_grade').append(star_html);
+          $('#image').append(image_html);
+        }
+      }
+      )};
+      
+          
+          
+    $('#star_grade a').click(function () {
+      $(this).parent().children("a").removeClass("on");
+      $(this).addClass("on").prevAll("a").addClass("on");
+      return false;
+    });
+
+    $(document).ready(function() {
+      show_tatto();
+    })
+  </script>
+</head>
+
+<body>
+
+  <body style="text-align: center;">
+    <div class="warp">
+      <div class="img" id="img">
+        <p id="image">
+          <!-- <img style="width:500px" src="{{ url_for('static', filename='tatto0.jpg') }}" alt="tattto"> -->
+        </p>
+
+        <div>
+          
+          <p id="star_grade" alt="alternative text" title="고통점수 5점만점 기준으로 측정 ">
+          </p>
+          
+        </div>
+        <div id="alltattoo">
+          
+        </div>
+
+
+        
+        
+      </p>
+      </div>
+      
+
+
+
+      </div>
+    </div>
+
+    
+  </body>
+  
+
+</html>

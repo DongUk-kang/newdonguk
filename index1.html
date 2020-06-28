@@ -1,7 +1,18 @@
 <!doctype html>
 <html lang="en">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+
 
 <head>
+
 
     <!-- Webpage Title -->
     <title>타투 고통 설명서?!</title>
@@ -12,9 +23,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
 
     <!-- JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -26,18 +41,23 @@
         crossorigin="anonymous"></script>
 
 
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Noto+Sans+KR:wght@100&display=swap"
+        rel="stylesheet">
 
     <style>
+        * {
+            font-family: 'Bree Serif', serif;
 
-        * { font-family: 'Dancing Script', cursive;
 
 
         }
+
         .body {
             width: 300px;
             height: 200px;
         }
+
         .image {
             color: rgb(236, 217, 217);
             border-radius: 10px;
@@ -50,13 +70,22 @@
             height: 100vh;
             padding: 0;
             margin: 0;
-            background-color: #f00;
-            background: url('http://www.beforeyourtattoo.com/images/Fotolia_Tattoo-Gun.jpg');
+            background-color: black;
+
             background-blend-mode: multiply;
             background-size: cover;
         }
     </style>
 </head>
+
+
+<script src="./js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" language="javascript">
+
+
+    
+
+</script>
 
 <body>
     <div class="wrap"> </div>
@@ -64,46 +93,66 @@
     <div class="backimg"></div>
 
     <body style="overflow-y:hidden"></body>
-    <div class="image">
-        <h1 style="font-size:45px;">Do you want to Tattoo?</h1>
-        <img id="tattoo" src="0610.png" alt="alternative text" title="진짜 하려고요? 생각 더해봐요... " border="0" usemap="#map"/>
+    <div class="image" id="part" alt="alternative text" title="누르면 상세정보를 볼 수 있어요!">
+        <h1 style="font-size:45px;">신체부위이름을 클릭해주세요!</h1>
+
+
+        <img id="tattoo" src="{{ url_for('static', filename='0610.png') }}" alt="alternative text"
+            title="진짜 하려고요? 생각 더해봐요... " border="0" usemap="#map" />
+
         <map id="imgmap20206100416" name="map">
-            <area shape="rect" alt="" title="" coords="276,237,309,268" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link0목.html" target="_blank" />
-            <area shape="rect" alt="" title="" coords="642,176,714,203" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link1목앞.html" target="_blank" />
-            <area shape="rect" alt="" title="" coords="255,331,306,362" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link2어깨.html" target="_blank" />
-            <area shape="rect" alt="" title="" coords="642,300,689,327" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link3갈비.html" target="_blank" />
-            <area shape="rect" alt="" title="" coords="277,420,306,452" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link4배.html" target="_blank" />
-            <area shape="rect" alt="" title="" coords="642,429,740,456" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link5바깥팔.html" target="_blank" />
-            <area shape="rect" alt="" title="" coords="236,549,305,573" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link6엉덩이.html" target="_blank" />
-            <area shape="rect" alt="" title="" coords="641,532,739,564" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link7손목.html" target="_blank" />
-            <area shape="rect" alt="" title="" coords="233,637,303,668" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link8손가락.html" target="_blank" />
-            <area shape="rect" alt="" title="" coords="642,649,738,676" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link9무릎뒤.html" target="_blank" />
-            <area shape="rect" alt="" title="" coords="234,733,303,761" href="file:///C:/Users/USER/Desktop/sparta/myproject/templates/link10종아리.html" target="_blank" />
+
+
+
+
+
+
+
+
+
+            <div id="detail_body">
+            <div id = "neck1">
+                <a href="/detail?body=neck" a_href id ="neck" target="_blank">
+                    <area shape="rect" alt="" title="" coords="276,237,309,268" /></a>
+                </div>
+                <div id ="fneck">
+                <a href="/detail?body=frontneck" a_href id ="frontneck" target="_blank">
+                    <area shape="rect" alt="link1.html" title="" coords="642,176,714,203" /></a>
+                </div>
+                <a href="/detail?body=shoulder" target="_blank">
+                    <area shape="rect" alt="" title="" coords="255,331,306,362" /></a>
+                <a href="/detail?body=rip" target="_blank">
+                    <area shape="rect" alt="" title="" coords="642,300,689,327" /></a>
+                <a href="/detail?body=stomach" target="_blank">
+                    <area shape="rect" alt="" title="" coords="277,420,306,452" /></a>
+                <a href="/detail?body=arm" target="_blank">
+                    <area shape="rect" alt="" title="" coords="642,429,740,456" /></a>
+                <a href="/detail?body=hip" target="_blank">
+                    <area shape="rect" alt="" title="" coords="236,549,305,573" /></a>
+                <a href="/detail?body=wrist" target="_blank">
+                    <area shape="rect" alt="" title="" coords="641,532,739,564" /></a>
+                <a href="/detail?body=finger" target="_blank">
+                    <area shape="rect" alt="" title="" coords="233,637,303,668" /></a>
+                <a href="/detail?body=knee" target="_blank">
+                    <area shape="rect" alt="" title="" coords="642,649,738,676" /></a>
+                <a href="/detail?body=calf" target="_blank">
+                    <area shape="rect" alt="" title="" coords="234,733,303,761" /></a>
+            </div>
+
+
+
             <!-- Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) -->
     </div>
 
 
-</div>
-<div>
-<map id="imgmap20206100416" name="imgmap20206100416">
-<area shape="rect" alt="" title="" coords="276,237,309,268" href="https://www.naver.com" target="_blank" />
-<area shape="rect" alt="" title="" coords="642,176,714,203" href="https://www.naver.com/" target="" />
-<area shape="rect" alt="" title="" coords="255,331,306,362" href="" target="" />
-<area shape="rect" alt="" title="" coords="642,300,689,327" href="" target="" />
-<area shape="rect" alt="" title="" coords="277,420,306,452" href="" target="" />
-<area shape="rect" alt="" title="" coords="642,429,740,456" href="" target="" />
-<area shape="rect" alt="" title="" coords="236,549,305,573" href="" target="" />
-<area shape="rect" alt="" title="" coords="641,532,739,564" href="" target="" />
-<area shape="rect" alt="" title="" coords="233,637,303,668" href="" target="" />
-<area shape="rect" alt="" title="" coords="642,649,738,676" href="" target="" />
-<area shape="rect" alt="" title="" coords="234,733,303,761" href="" target="" />
-<!-- Created by Online Image Map Editor (http://www.maschek.hu/imagemap/index) -->
-</map>
+    </div>
+    <div>
 
 
 
 
-    
+
+
 
 
 </body>
